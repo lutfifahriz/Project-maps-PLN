@@ -112,7 +112,7 @@ data.forEach(loc => {
       <b>ID:</b> ${loc.id}<br>
       <b>Alamat:</b> ${loc.desa}, ${loc.kecamatan}<br>
       <b>Koordinat:</b> ${loc.coords.join(', ')}<br>
-      <img src="images/${loc.foto}" alt="Foto" style="width: 40%; margin-top: 6px; border-radius: 6px;">
+      <img src="${loc.foto}" alt="Foto" style="width: 40%; margin-top: 6px; border-radius: 6px;">
     </div>
   `);
 
@@ -125,7 +125,7 @@ data.forEach(loc => {
     sidebar.innerHTML = `
       <button id="closeSidebarBtn" class="close-btn">×</button>
       <h2>${loc.id}</h2>
-      <img src="images/${loc.foto}" alt="Foto">
+      <img src="${loc.foto}" alt="Foto">
       <p><b>Desa/Kecamatan:</b> ${loc.desa}, ${loc.kecamatan}</p>
       <p><b>Koordinat:</b> ${loc.coords.join(", ")}</p>
       <p><b>Tanggal Survey:</b> ${loc.tanggal}</p>
@@ -159,7 +159,7 @@ function handleKey(e) {
       map.setView(found.coords, 17);
       L.popup()
         .setLatLng(found.coords)
-        .setContent(`<b>${found.id}</b><br>${found.sumber}<br><img src="images/${found.foto}" width="100">`)
+        .setContent(`<b>${found.id}</b><br>${found.sumber}<br><img src="${found.foto}" width="100">`)
         .openOn(map);
     } else {
       alert("ID tidak ditemukan");
